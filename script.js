@@ -3,7 +3,7 @@ function Person(name, age) {
 	this.name = name;
 	this.age = age;
 
-	greet() {
+	Person.prototype.greet = ()=> {
 		return `Hello, my name is ${this.name}, I am ${this.age} years old.`;
 	}
 }
@@ -14,7 +14,7 @@ function Employee(name, age, jobTitle) {
 	this.jobTitle = jobTitle;
 	__proto__: Person;
 
-	jobGreet() {
+	Employee.prototype.jobGreet = ()=> {
 		return `Hello, my name is ${this.name}, I am ${this.age} years old, and my job title is ${this.jobTitle}.`
 	}
 }
@@ -22,3 +22,8 @@ function Employee(name, age, jobTitle) {
 // Do not change code below this line
 window.Person = Person;
 window.Employee = Employee;
+
+const person = new Person("Alice", 25);
+const employee = new Employee("Bob", 30, "Manager");
+person.greet();
+employee.jobGreet();
