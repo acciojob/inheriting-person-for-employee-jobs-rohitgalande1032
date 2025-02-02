@@ -25,5 +25,5 @@ window.Employee = Employee;
 
 const person = new Person("Alice", 25);
 const employee = new Employee("Bob", 30, "Manager");
-person.greet();
-employee.jobGreet();
+console.log(person.greet());
+console.log(employee.jobGreet());
